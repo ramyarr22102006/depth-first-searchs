@@ -1,6 +1,6 @@
 <h1>ExpNo 2 : Implement Depth First Search Traversal of a Graph</h1> 
-<h3>Name:RAMYA R </h3>
-<h3>Register Number:212224020048   </h3>
+<h3>Name: RAMYA R A</h3>
+<h3>Register Number:  212224020048  </h3>
 <H3>Aim:</H3>
 <p> To Implement Depth First Search Traversal of a Graph using Python 3.</p>
 <h3>Theory:</h3>
@@ -19,7 +19,7 @@ Step 2: Visit 0 and put its adjacent nodes which are not visited yet into the st
  Visit node 0 and put its adjacent nodes (1, 2, 3) into the stack
  Visit node 0 and put its adjacent nodes (1, 2, 3) into the stack
 
-Step 3: Now, Node 1 at the top of the stack, so visit node 1 and pop it from the stack and put all of its adjacent nodes which are not visited in the stack.
+Step 3: Now, Node 1 at the top of the stack, so visit node 1 and pop it from the stack and put all of its adjacent nodes which are not visited in the stark
  ![image](https://github.com/natsaravanan/19AI405FUNDAMENTALSOFARTIFICIALINTELLIGENCE/assets/87870499/e6017942-08b1-4742-87ad-c97eb97bf985)
 
 Visit node 1
@@ -39,8 +39,7 @@ Step 5: Now, Node 4 at the top of the stack, so visit node 4 and pop it from the
 
 Step 6: Now, Node 3 at the top of the stack, so visit node 3 and pop it from the stack and put all of its adjacent nodes which are not visited in the stack.
  ![image](https://github.com/natsaravanan/19AI405FUNDAMENTALSOFARTIFICIALINTELLIGENCE/assets/87870499/3b88f04a-7846-4f75-89b4-22bbd5b48e52)
-
-Visit node 3
+ Visit node 3
 Visit node 3
 
 Now, the Stack becomes empty, which means we have visited all the nodes, and our DFS traversal ends.
@@ -74,6 +73,34 @@ F H <BR>
 
 <hr>
 
+## Program :
+```
+#import defaultdict
+from collections import defaultdict
+def dfs(graph,start,visited,path):
+    path.append(start)
+    visited[start]=True
+    for neighbour in graph[start]:
+        if visited[neighbour]==False:
+      dfs(graph,neighbour,visited,path)
+            visited[neighbour]=True
+    return path
+graph=defaultdict(list)
+n,e=map(int,input().split())
+for i in range(e):
+    u,v=map(str,input().split())
+    graph[u].append(v)
+    graph[v].append(u)
+#print(graph)
+start='A'
+visited=defaultdict(bool)
+path=[]
+traversedpath=dfs(graph,start,visited,path)
+print(traversedpath)
+```
+## Output:
+<img width="540" height="528" alt="image" src="https://github.com/user-attachments/assets/a6ed8ac8-7905-474e-b2a4-fd4d7ed23af0" />
+
 <hr>
 <h3>Sample Input</h3>
 <hr>
@@ -87,8 +114,10 @@ F H <BR>
 <h3>Sample Output</h3>
 <hr>
 ['0', '1', '2', '3', '4']
-<h3>PROGRAM</h3>
 
+<hr>
+
+## Program :
 ```
 #import defaultdict
 from collections import defaultdict
@@ -112,19 +141,11 @@ visited=defaultdict(bool)
 path=[]
 traversedpath=dfs(graph,start,visited,path)
 print(traversedpath)
-
 ```
-<h3>Output</h3>
-<img width="632" height="160" alt="image" src="https://github.com/user-attachments/assets/51ca9b6f-b6a2-43da-aff2-af495a30dd8c" />
+## Output:
 
-<hr>
-<h3>Result:</h3>
-<hr>
-<p>Thus,a Graph was constructed and implementation of Depth First Search for the same graph was done successfully.</p>
+<img width="433" height="381" alt="image" src="https://github.com/user-attachments/assets/23d4c8c5-5b6e-447d-a2d9-0aa00c1b072d" />
 
-
-
-<hr>
 <h3>Result:</h3>
 <hr>
 <p>Thus,a Graph was constructed and implementation of Depth First Search for the same graph was done successfully.</p>
